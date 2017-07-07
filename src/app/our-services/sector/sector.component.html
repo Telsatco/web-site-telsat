@@ -1,0 +1,61 @@
+<div [ngSwitch]="sector.parent">
+<!-->////////////////////////////////////PRIMEROS ANCESTROS\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\</!--> 
+  <h2 class="display-4" *ngSwitchCase="''">
+    <span (click)="send()"
+          [class.parent]="sector.children">
+            <div *ngIf="!sector.parent">
+              <i class="fa fa-2x fa-{{clase}}" aria-hidden="true" ></i>
+              <br>
+            </div>
+            {{sector.caption}}
+    </span>
+  </h2>
+<!-->////////////////////////////////////DESCENDIENTES\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\</!-->
+  <div class="flip-cards hidden-sm-down" 
+      [ngClass]="{'active': flip, 'ancestry': children}" 
+      (click)="toggle()" 
+      *ngSwitchDefault>
+    <div class="card front-card">
+      <img class="card-img-top img-fluid" src="http://hd.wallpaperswide.com/thumbs/night_landscape-t2.jpg" alt="Card image cap">
+      <a id="boton" class="display-4" *ngIf="children">Leer más</a>
+      <div class="card-block">
+        <div class="container">
+          <div class="row align-items-center">
+            <h4 class="col-12 card-title align-middle text-center display-4">{{sector.caption}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card reverse-card">
+      <div class="card-block">
+        <h4 id="title-rev" class="card-title align-middle text-left display-4">{{sector.caption}}</h4>
+        <table class="table table-bordered" *ngIf="children">
+          <tbody>
+            <tr *ngFor="let child of children">
+              <td class="display-4">{{child.caption}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <a id="volver" *ngIf="children">Volver</a>
+      </div>
+    </div>
+  </div>
+  <div class="hidden-md-up" 
+      *ngSwitchDefault>
+     <div class="card">
+      <div class="card-block">
+        <h4 id="title-rev" class="card-title align-middle text-left display-4">{{sector.caption}}</h4>
+        <table class="table table-bordered" *ngIf="children">
+          <tbody>
+            <tr *ngFor="let child of children">
+              <td class="display-4">{{child.caption}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <a id="volver" *ngIf="children">Volver</a>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -4,11 +4,42 @@
   <meta charset="utf-8">
   <title>FrontEnd</title>
   <base href="/">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" type="" href="assets\hover\css\set2.css">
+  <script src="https://use.fontawesome.com/627f3351b9.js"></script> 
 </head>
-<body>
-  <app-root></app-root>
+<body onload="loaded()" data-spy="scroll" data-target=".navbarNav-spy" data-offset="96">
+  <app-root id="content" style="display: none"></app-root>
+  <div id="load-container">
+    <div id="load">
+      <div>.</div>
+      <div>.</div>
+      <div>.</div>
+      <div>O</div>
+      <div>D</div>
+      <div>N</div>
+      <div>A</div>
+      <div>G</div>
+      <div>R</div>
+      <div>A</div>
+      <div>C</div>
+    </div>
+  </div>
 </body>
+<script>
+  AOS.init({
+      offset: 200,
+      duration: 600,
+      easing: 'ease-in-sine',
+      delay: 10,
+    });
+  
+  function loaded() {
+    setTimeout(()=> {
+      document.getElementById('content').style.display = 'block';
+      document.getElementById('load-container').style.display = 'none';
+    },4000)
+  }
+</script>
 </html>

@@ -1,0 +1,22 @@
+<h4>Clientes</h4>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" role="listbox">
+    <div class="row align-items-center carousel-item"
+         [ngClass]="{
+           'active': i === 0
+         }"
+         *ngFor="let group of clients; let i = index">
+         <div class="row align-items-center text-center" *ngFor="let row of group">
+            <a href="#" class="col-sm-4" *ngFor="let client of row">
+                <img class="img-fluid" src="{{client.link}}" alt="{{client.company}}">
+            </a>
+         </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+  </a>
+</div>

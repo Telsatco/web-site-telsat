@@ -1,0 +1,64 @@
+#header {
+  width: 100%;
+  height: 96px;
+  background-color: #eaeaea;
+  box-shadow: 0 2px 20px #454545;
+  -moz-box-shadow: 0 2px 20px #454545;
+  -webkit-box-shadow: 0 2px 20px #454545;
+}
+
+nav {
+  padding: 10px;
+  border:solid 4px #eaeaea;
+}
+
+nav, ul, li {
+  height: 100px;
+}
+
+@font-face {
+  font-family: "Nasalization";
+  src: url("../../assets/nasalization-rg.ttf") format("truetype");
+}
+
+.telsat {
+  font-family: "Nasalization";
+  font-size: 50px;
+  color: #00669d !important;
+  margin-left: 20px;
+}
+
+a {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 40%;
+}
+
+button {
+  height: 50px;
+  margin-top: 10px;
+}
+
+a span {
+  width: 100%;
+  height: 100%;
+}
+
+contact-us-button {
+  position: absolute;
+  right: 20px;
+  top: 30%;
+}
+
+@media screen and (max-width: 991px) {
+    contact-us-button {
+      right: 100px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .telsat {
+      font-size: 30px;
+    }
+}

@@ -1,0 +1,244 @@
+h2 {
+  text-shadow: 0 0 20px black;
+  font-size: 30px;
+}
+
+.parent {
+  cursor: pointer;
+  color: white;
+}
+
+span {
+  color: #b1b1b1;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+
+::selection {
+    background: rgba(255,255,255,0);
+}
+::-moz-selection {
+    background: rgba(255,255,255,0);
+}
+
+.card {
+  margin: 20px auto;
+  height: 350px;
+  width: 20rem;
+}
+
+img {
+  width: 100%;
+  height: 200px;
+}
+
+h4 {
+  margin: auto;
+  display: table-cell;
+}
+
+.btn {
+  color: white !important;
+  margin-top: 20px;
+}
+
+.container {
+  height: 120px;
+}
+
+.row {
+  height: 100%;
+}
+
+tbody {
+  display: block;
+  height: 240px;
+  overflow: auto;
+  font-size: 12px;;
+}
+
+tr {
+  width: 100%;
+}
+
+table {
+  margin-top: 10px;
+}
+
+.title-rev{
+  font-size: 20px;
+}
+
+.boton {
+  position: absolute;
+  top: 150px;
+  left: 10%;
+  width: 80%;
+  color: white;
+}
+
+.volver {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  color: black;
+}
+
+h4 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+td {
+  font-size: 20px;
+}
+
+/*---------------------------*/
+
+.flip-cards{
+    float:left;    
+    margin-left:5px;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+}
+
+.ancestry:hover {
+  cursor: pointer;
+}
+
+.active{
+    transform: rotateY( 180deg );
+    -ms-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    -webkit-transform: rotateY(180deg);
+}
+
+.reverse-card{
+    top: 0;
+    position:absolute;
+    border-radius:15px;   
+    -webkit-border-radius:15px;   
+    -moz-border-radius:15px;   
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY( 180deg );
+    -ms-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+} 
+
+h4 {
+  font-size:15px;
+}
+
+
+@media screen and (max-width: 576px){/*extra small*/
+  td {
+    font-size:15px;
+  }
+  #boton {
+    font-size: 15px;
+  }
+  #volver {
+    font-size: 15px;
+  }
+  span:hover {
+    font-size: 23px !important;
+  }
+  span {
+    font-size:18px;
+	}
+  .card {
+    width: 100%;
+  }
+  .ancestry:hover {
+    cursor: auto;
+  }
+}
+
+@media screen and (min-width: 577px) {/*small*/
+  td {
+    font-size:15px;
+  }
+  #boton {
+    font-size: 17px;
+  }
+  #volver {
+    font-size: 17px;
+  }
+  span:hover {
+    font-size: 26px !important;
+  }
+  span {
+    font-size:21px;
+	}
+  .ancestry:hover {
+    cursor: auto;
+  }
+}
+
+@media screen and (min-width: 769px) {/*Medium*/
+  span:hover {
+    font-size: 31px !important;
+  }
+   span {
+    font-size:26px;
+	}
+  .ancestry:hover {
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 993px) {/*large*/
+  span:hover {
+    font-size: 31px !important;
+  }
+   span {
+    font-size:26px;
+	}
+  .ancestry:hover {
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 1201px) {/*extra large*/
+  h4 {
+    font-size:15px;
+  }
+  td {
+    font-size:20px;
+  }
+  #boton {
+    font-size: 20px;
+  }
+  #volver {
+    font-size: 20px;
+  }
+  span:hover {
+    font-size: 35px !important;
+  }
+  span {
+    font-size:30px;
+	}
+  .ancestry:hover {
+    cursor: pointer;
+  }
+}
+
+/*
+Extra small
+<576px	Small
+≥576px	Medium
+≥768px	Large
+≥992px	Extra large
+≥1200px*/

@@ -1,0 +1,65 @@
+figure, img, figcaption {
+  height: 200px;
+}
+
+figure {
+  background: #005684 !important;
+  min-width: 0;
+}
+
+p {
+  margin-right: 20px !important;
+  margin-bottom: 20px !important;
+  text-shadow: 0px 0px 10px black;
+  font-size: 15px !important;
+  left: 0;
+  max-width: none !important;
+}
+
+h2 {
+  text-shadow: 0px 0px 10px black;
+  font-size:25PX;
+}
+
+figure:hover img {
+  filter: blur(5px);
+}
+
+.grid {
+  width: 100%;
+}
+
+@media screen and (max-width: 576px){/*extra small*/
+  h2 {
+    font-size: 15px;
+  }
+  p {
+    font-size: 10px !important;
+  }
+}
+
+@media screen and (min-width: 768px) {/*small*/
+  h2 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 12px !important;
+  }
+}
+
+
+@media screen and (min-width: 992px) {/*extra large*/
+   h2 {
+    font-size: 25px;
+  }
+  p {
+    font-size: 14px !important;
+  }
+}
+/*
+Extra small
+<576px	Small
+≥576px	Medium
+≥768px	Large
+≥992px	Extra large
+≥1200px*/

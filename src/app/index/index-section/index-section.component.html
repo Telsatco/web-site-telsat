@@ -1,0 +1,47 @@
+<div id="{{section.link}}" class="section" [ngSwitch]="side" [ngStyle]="{'background': 'url(' + section.img + ') no-repeat center'}">
+
+<!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CASO 0, seccion de inicio /////////////////////////////////////-->
+  <div class="row align-items-center" *ngSwitchCase="0">    
+    <div data-aos="fade-down" class="message col-12 col-xl-7 text-justify">
+      <h3 class="display-4">{{section.msg}}</h3>
+    </div>
+    <div class="col-10 offset-1 text-center hidden-xs-down">
+      <a href="#nosotros" (click)="onWindowScroll()">
+        <scroll-down></scroll-down>
+      </a>
+    </div>
+  </div>
+
+<!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CASO 1, titulo en la izquierda /////////////////////////////////////-->
+
+  <div class="row align-items-center" *ngSwitchCase="1">
+    <div data-aos="fade-up" class="title col-12 col-lg-3 text-center">
+      <h1 class="display-1 ">{{section.text}}</h1>
+    </div>
+    <div data-aos="fade-up" class="message col-12 col-lg-7 text-justify hidden-xs-down">
+      <h3 class="display-4">{{section.msg}}</h3>
+    </div>
+    <div class="col-10 offset-1 offset-lg-0 col-lg-2 text-center">
+      <a (click)="goTo()">
+        <scroll-right></scroll-right>
+      </a>
+    </div>
+  </div>
+
+<!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CASO 2, titulo en la derecha /////////////////////////////////////-->
+
+  <div class="row align-items-center" *ngSwitchCase="2">
+    <div data-aos="fade-up" class="message col-12 col-lg-7 text-justify hidden-xs-down">
+      <h3 class="display-4">{{section.msg}}</h3>
+    </div>
+    <div data-aos="fade-up" class="title col-12 col-lg-3 text-center">
+      <h1 class="display-1">{{section.text}}</h1>
+    </div>
+    <div class="col-10 offset-1 offset-lg-0 col-lg-2 text-center">
+      <a (click)="goTo()">
+        <scroll-right></scroll-right>
+      </a>
+    </div>
+  </div>
+
+</div>

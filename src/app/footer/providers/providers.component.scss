@@ -1,0 +1,31 @@
+.card, .card-block {
+  padding: 0;
+  border: 0;
+}
+
+.carousel-inner, .carousel {
+  height: 90%;
+}
+
+i{
+  font-size: 40px;
+  color: #0275d8;
+  opacity: 1 !important;
+}
+
+.row {
+  height: 50%;
+  padding: 0 10px;
+}
+
+.row.align-items-center.carousel-item {
+  height: 300px
+}
+
+.carousel-item {
+  margin: 0;
+}
+
+h4 {
+  margin: 0;
+}
