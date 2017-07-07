@@ -1,4 +1,5 @@
-import { clients, providers } from './../../data/data';
+import { Project } from './../../classes/project';
+import { clients, providers, projects } from './../../data/data';
 import { Client } from './../../classes/client';
 import { Injectable } from '@angular/core';
 
@@ -7,12 +8,16 @@ export class ClientsService {
 
   constructor() { }
 
-  getClient(): Promise<Client[]> {
+  getClient(): Promise <Client[]> {
     return Promise.resolve(clients);
   }
 
-  getProvider(): Promise<Client[]> {
+  getProvider(): Promise <Client[]> {
     return Promise.resolve(providers);
+  }
+
+  getProjects(): Promise <Project[]> {
+    return Promise.resolve(projects);
   }
 
 }

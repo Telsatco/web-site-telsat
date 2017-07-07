@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-about',
@@ -15,7 +14,7 @@ export class AboutComponent implements OnInit {
    }
 
   ngAfterViewInit(){
-    $("#navbarNav").removeClass("navbarNav-spy");
+    document.querySelector("#navbarNav").classList.remove("navbarNav-spy");
   }
 
 }

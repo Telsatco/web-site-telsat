@@ -1,3 +1,11 @@
-<p>
-  our-projects works!
-</p>
+<div class="container-fluid text-center">
+  <div class="row">
+    <div class="card-columns">
+        <div class="card" *ngFor="let project of projects">
+          <img class="cad-img img-fluid" src="{{project.image}}" alt="{{project.title}}">
+        </div>    
+    </div>
+  </div>
+</div>
+
+<!-- images placed inside block elements to deal with a Firefox rendering bug affecting  scaled flexbox images -->

@@ -36,7 +36,7 @@ export class ClientsComponent implements OnInit {
     //clone the source array so we can safely splice it
     let queue = source;
 
-    for (let r=0;r<groups;r++) {
+    for (let r=0; r < groups; r++) {
       //Grab the next groupful from the queue, and append it to the array of groups
       grouped.push(queue.splice(0, groupSize));            
     }       
