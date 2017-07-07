@@ -22,7 +22,6 @@ import { ScrollRightComponent } from './index/index-section/scroll-right/scroll-
 import { DivisionesComponent } from './about/divisiones/divisiones.component';
 import { ScrollLeftComponent } from './our-services/scroll-left/scroll-left.component';
 import { SectorComponent } from './our-services/sector/sector.component';
-import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -44,8 +43,7 @@ import { LoadingComponent } from './loading/loading.component';
     ScrollRightComponent,
     DivisionesComponent,
     ScrollLeftComponent,
-    SectorComponent,
-    LoadingComponent
+    SectorComponent
   ],
   imports: [
     BrowserModule,
