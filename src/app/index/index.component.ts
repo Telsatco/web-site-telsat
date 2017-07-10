@@ -1,7 +1,6 @@
 import { Button } from './../classes/button';
 import { ButtonsService } from './../services/buttons/buttons.service';
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-index',
@@ -20,13 +19,11 @@ export class IndexComponent implements OnInit {
   }
 
   getButtons(): void {
-    this.buttonsService.getButtons().then(data => {
-      this.buttons = data;
-    })
+    this.buttonsService.getButtons().then(data => this.buttons = data )
   }
 
   ngAfterViewInit(){
-    $("#navbarNav").addClass("navbarNav-spy")
+    document.getElementById("navbarNav").classList.add("navbarNav-spy")
   }
 
 }

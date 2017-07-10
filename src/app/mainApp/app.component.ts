@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'TELSAT';
+  authors = ['Esteban Toledo', 'Juan Felipe Gomez'];
 }

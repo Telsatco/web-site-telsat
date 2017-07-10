@@ -1,8 +1,8 @@
+import { DOCUMENT } from '@angular/platform-browser';
 import { sectors } from './../data/data';
 import { Sector } from './../classes/sector';
 import { SectorsService } from './../services/sectors/sectors.service';
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery';
 import { trigger, state, style, transition, animate } from "@angular/animations";
 
 @Component({
@@ -40,21 +40,18 @@ export class OurServicesComponent implements OnInit {
   }
 
   getSectors(parent: string): void {
-    this.sectorsService.getSectors(parent).then(data => {
-      if (data.length>0){
-        this.sectors = data;
-      }
-    });
+    this.sectorsService.getSectors(parent)
+      .then(data => {
+        if (data.length > 0) this.sectors = data
+      });
   }
 
   getParent(parent: string):void {
-    console.log(this.sectors[0].parent)
-    this.sectorsService.getParent(parent).then(data => {
-      this.sectors = data;
-    });
+    this.sectorsService.getParent(parent)
+      .then(data => this.sectors = data )
   }
 
   ngAfterViewInit(){
-    $("#navbarNav").removeClass("navbarNav-spy");
+    document.getElementById("navbarNav").classList.remove("navbarNav-spy");
   }
 }

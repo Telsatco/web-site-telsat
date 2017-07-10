@@ -19,9 +19,8 @@ export class HeaderComponent implements OnInit {
   }
 
   getButtons(): void {
-    this.buttonsService.getButtons().then(data => {
-      this.buttons = data;
-    })
+    this.buttonsService.getButtons()
+        .then(data => this.buttons = data )
   }
 
 }

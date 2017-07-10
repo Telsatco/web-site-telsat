@@ -14,7 +14,7 @@ export class AboutComponent implements OnInit {
    }
 
   ngAfterViewInit(){
-    document.querySelector("#navbarNav").classList.remove("navbarNav-spy");
+    document.getElementById("navbarNav").classList.remove("navbarNav-spy");
   }
 
 }

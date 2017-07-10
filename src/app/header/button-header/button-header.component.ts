@@ -12,7 +12,6 @@ import * as $ from 'jquery';
 })
 export class ButtonHeaderComponent implements OnInit {
 
-
   @Input('buttons') btn: Button[];
   currentLocation: string;
 
@@ -21,11 +20,8 @@ export class ButtonHeaderComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-  }   
-
-  ngOnChanges(){
     this.currentLocation = window.location.pathname.slice(1)
-  }
+  }   
   
   @HostListener('click', ['$event']) onClick(e) {
     e.preventDefault();
@@ -33,13 +29,13 @@ export class ButtonHeaderComponent implements OnInit {
     $(".nav-link").removeClass("active");
     this.btn.forEach((el) => {
       if (el.link === this.currentLocation) {
-        $(`#${el.text}`).addClass("active");
+        document.getElementById(`${el.text}`).classList.add("active");
       }
     })
   }
 
   onWindowScroll(link: string) {
     this.router.navigate([`/${link}`]);
-    $('html, body').scrollTop(0);      
+    document.querySelector("html, body").scrollTop = 0
   }
 }

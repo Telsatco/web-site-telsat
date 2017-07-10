@@ -31,23 +31,20 @@ export class IndexSectionComponent implements OnInit {
         }
     }
   }
-
-  ngAfterViewInit() {
-  }
-
+  
   goTo(): void {
     this.router.navigate([`/${this.section.link}`]);
     this.currentLocation = window.location.pathname.slice(1)
     $(".nav-link").removeClass("active");
-    $(`#${this.section.text}`).addClass("active");
-    $('html, body').scrollTop(0);
+    document.getElementById(`${this.section.text}`).classList.add("active");
+    document.querySelector('html, body').scrollTop = 0;
   }
 
   @HostListener('click', ['$event']) onClick(e) {
     e.preventDefault();
   }
 
-  onWindowScroll() {
+  onWindowScroll() {   
     $('html, body').animate({
       scrollTop: $('#nosotros').offset().top -95
     }, 'slow')
