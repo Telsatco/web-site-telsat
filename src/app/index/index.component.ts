@@ -1,6 +1,6 @@
-import { Button } from './../classes/button';
-import { ButtonsService } from './../services/buttons/buttons.service';
 import { Component, OnInit } from '@angular/core';
+import { Button } from "app/classes/button";
+import { ButtonsService } from "app/services/buttons/buttons.service";
 
 @Component({
   selector: 'app-index',

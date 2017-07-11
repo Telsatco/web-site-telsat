@@ -1,9 +1,8 @@
 import { DOCUMENT } from '@angular/platform-browser';
-import { sectors } from './../data/data';
-import { Sector } from './../classes/sector';
-import { SectorsService } from './../services/sectors/sectors.service';
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from "@angular/animations";
+import { SectorsService } from "app/services/sectors/sectors.service";
+import { Sector } from "app/classes/sector";
 
 @Component({
   selector: 'app-our-services',

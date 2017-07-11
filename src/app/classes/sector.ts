@@ -3,12 +3,21 @@ export class Sector {
   private _caption: string;
   private _parent: string;
   private _children: boolean;
+  private _image: string;
 
-  constructor({ id, caption, parent, children = false }) {
+  constructor({ id, caption, parent, children = false, image }) {
     this._caption = caption
     this._id = id
     this._children = children
     this._parent = parent
+    this._image = image
+  }
+
+  set image (image: string) {
+    this._image = image
+  }
+  get image() {
+    return this._image
   }
 
   set caption (caption: string) {

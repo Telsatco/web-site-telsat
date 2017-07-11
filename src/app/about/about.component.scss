@@ -2,11 +2,15 @@
   margin: 60px auto 50px auto;
 }
 
+#misionVision {
+  margin-top: 20px;
+}
+
 @media screen and (max-width: 576px){/*extra small*/
   h3 {
     font-size: 20px;
   }
-  p {
+  .misionVision {
     font-size: 15px !important;
     line-height: normal;
   }
@@ -16,7 +20,7 @@
   h3 {
     font-size: 23px;
   }
-  p {
+  .misionVision {
     font-size: 17px !important;
     line-height: normal;
   }
@@ -27,7 +31,7 @@
    h3 {
     font-size: 30px;
   }
-  p {
+  .misionVision {
     font-size: 19px !important;
   }
 }

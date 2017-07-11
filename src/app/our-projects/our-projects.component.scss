@@ -5,3 +5,102 @@ img{
 div.container-fluid {
   margin: 15px;
 }
+
+
+.frame {
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+  -ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+
+.border {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	-webkit-transition: all 500ms cubic-bezier(.5,.3,.25,1);
+  
+  .contenedor {
+    -webkit-transition: all 550ms cubic-bezier(.3,.2,.25,1);
+    transition: all 550ms cubic-bezier(.3,.2,.25,1);
+    position: absolute;
+    top: 2.5vw;
+    right: 2.5vw;
+    bottom: 2.5vw;
+    left: 2.5vw;
+     display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #fefefa;
+    opacity: 0;
+    -webkit-transform: scale(1.8);
+    transform: scale(1.8);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    h3, p{
+      text-shadow: 0 0 20px black;
+    }
+    
+    p{
+      font-size: 20px;
+    }
+  }
+}
+
+.img {
+	-webkit-transition: all 600ms cubic-bezier(.4,.25,.3,1);
+	transition: all 600ms cubic-bezier(.4,.25,.3,1);
+	object-fit: cover;
+}
+
+.frame:hover {
+
+  .border {
+    box-shadow: inset 0px 0px 0px 2.5vw hsla(0,0%,6%,.85);
+
+    .contenedor {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      border: 1px solid #fefefa;
+    }
+  }
+}
+
+.frame:active {
+
+  .border {
+    -webkit-transition: none;
+    transition: none;
+    box-shadow: inset 0px 0px 0px 3.5vw hsla(0,0%,6%,.85);
+    
+    .contenedor {
+      -webkit-transition: none;
+      transition: none;
+      -webkit-transform: scale(.9);
+      transform: scale(.9);
+    }
+  }
+}

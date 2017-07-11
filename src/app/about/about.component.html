@@ -1,32 +1,30 @@
 <div class="container" data-aos="fade-down">
   <section class="row">
-    <div class="col text-justify">
-      <br>
-      <h3>Misión</h3>
-      <p> 
-        Desde 1980, esta dedicada a investigar y proveer soluciones que exigen alta tecnología e integración para las necesidades de la industria, satisfaciendo y superando las necesidades y expectativas de nuestros clientes procurando siempre efectuar una integración total de los sistemas instalados.
-        
-        Para lograr un desarrollo coordinado y dar participación a las nuevas generaciones, tenemos convenios con las universidades y centros de investigación en el área tecnológica y desarrollo.
-      </p> 
+    <div id="misionVision" class="col text-justify" *ngIf="mision && vision">
+      <h3>{{mision.title}}</h3>
+      <p class="misionVision">{{mision.info}}</p>
+      <h3>{{vision.title}}</h3>
+      <p class="misionVision">{{vision.info}}</p>
+    </div>
+  </section>
+  <section class="row diagrams" *ngIf="philos && orgChart" >
+    <div class="col-lg-6 col-sm-12 text-center">
+      <h3>{{philos.title}}</h3>
+      <img src="{{philos.img}}" class="img-fluid" alt="Filosofía">
+    </div>
+    <div class="col-lg-6 col-sm-12 text-center">
+      <h3>{{orgChart.title}}</h3>
+      <img src="{{orgChart.img}}" class="img-fluid" alt="Organigrama">
+    </div>
+  </section>
 
-      <h3>Visión</h3>
-      <p>
-        Creemos firmemente que el desarrollo económico de un país es el fortalecimiento de las industrias de base tecnológica en manufactura e investigación,  por tal motivo, siempre estaremos a la vanguardia de los desarrollos de alta tecnología.
-        
-        Nuestro principal objetivo es mantenernos con las ultimas tecnologías del mercado que puedan ser usadas en nuestros proyectos con los clientes, quienes depositan la confianza en nuestro equipo de trabajo consolidando relaciones a largo plazo
-      </p>
+  <section class="row">
+    <div class="col-6" *ngFor="let value of values">
+      <h5>{{value.title}}</h5>
+      <p class="text-justify">{{value.info}}</p>
     </div>
   </section>
-  <section class="row diagrams">
-    <div class="col-lg-6 col-sm-12 text-center">
-      <h3>Filosofía</h3>
-      <img src="assets/us/Filosofia.png" class="img-fluid" alt="Filosofía">
-    </div>
-    <div class="col-lg-6 col-sm-12 text-center">
-      <h3>Organigrama</h3>
-      <img src="assets/us/Organigrama.png" class="img-fluid" alt="Organigrama">
-    </div>
-  </section>
+
   <section class="row">
     <div class="col">
       <h3>Divisiones técnicas</h3>

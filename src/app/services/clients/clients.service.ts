@@ -1,7 +1,7 @@
-import { Project } from './../../classes/project';
-import { clients, providers, projects } from './../../data/data';
-import { Client } from './../../classes/client';
 import { Injectable } from '@angular/core';
+import { Project } from "app/classes/project";
+import { Client } from "app/classes/client";
+import { clients, providers, projects, techDivisions } from "app/data/data";
 
 @Injectable()
 export class ClientsService {
@@ -18,6 +18,10 @@ export class ClientsService {
 
   getProjects(): Promise <Project[]> {
     return Promise.resolve(projects);
+  }
+
+  getTechDivisions(): Promise <Project[]> {
+    return Promise.resolve(techDivisions);
   }
 
 }

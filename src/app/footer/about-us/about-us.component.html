@@ -1,32 +1,32 @@
-<div class="row">
+<div class="row" *ngIf="companyInfo">
   <div class="col-12 col-md-6">
       <iframe
     width="100%"
     height="62%"
     frameborder="0" style="border:0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAKNYGjXohXZJ4D6K5NwSqICaFg5L7xo08
-      &q=telsat sas,Medellin" allowfullscreen>
+    src="https://www.google.com/maps/embed/v1/place?q=telsat%20sas%2CMedellin&key=AIzaSyAKNYGjXohXZJ4D6K5NwSqICaFg5L7xo08" allowfullscreen>
   </iframe>
     <pre>
-<strong>Dirección postal:</strong>
-Carrera 50 # 63-162
-Medellín, Colombia, Suramérica.
+<strong>{{companyInfo.addresTitle}}</strong>
+{{companyInfo.addresLocal}}
+{{companyInfo.addresCity}}
     </pre>
   </div>
 
   <div class="col-12 col-md-6">
     <pre>
-CONTÁCTENOS:
-<strong>Teléfono:</strong> (57)(4)254-4924
-<strong>Fax:</strong> (57)(4)254-3173
-<strong>Correo electrónico:</strong><br> telsatco@gmail.com
+{{companyInfo.contactTitle}}
+<strong>{{companyInfo.contactPhoneTitle}}</strong> {{companyInfo.contactPhone2}}
+<strong>{{companyInfo.contactFaxTitle}}</strong> {{companyInfo.contactFaxPhone}}
+<strong>{{companyInfo.emailTitle}}</strong><br> {{companyInfo.email2}}
     
-<strong>Horario:</strong>
-Lunes - Viernes: 8:00 am - 6:00 pm
-Sabado: 8:00 am - 11:00 am
+<strong>{{companyInfo.hoursTitle}}</strong>
+{{companyInfo.hoursWeek}}
+{{companyInfo.hoursWeekend}}
 
-<strong>TELSAT SAS</strong>
-Copyright © 2011 TELSAT
+<strong>{{companyInfo.companyName}}</strong>
+{{companyInfo.copyRight}}
     </pre>
   </div>
 </div>
+

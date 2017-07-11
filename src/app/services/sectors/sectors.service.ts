@@ -1,6 +1,6 @@
-import { Sector } from './../../classes/sector';
-import { sectors } from './../../data/data';
 import { Injectable } from '@angular/core';
+import { Sector } from "app/classes/sector";
+import { sectors } from "app/data/data";
 
 @Injectable()
 export class SectorsService {

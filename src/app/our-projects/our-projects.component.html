@@ -1,8 +1,14 @@
 <div class="container-fluid text-center">
   <div class="row">
     <div class="card-columns">
-        <div class="card" *ngFor="let project of projects">
-          <img class="cad-img img-fluid" src="{{project.image}}" alt="{{project.title}}">
+        <div class="card frame" *ngFor="let project of projects">
+          <img class="cad-img img-fluid img" src="{{project.image}}" alt="{{project.title}}">
+          <div class="border">
+            <div class="contenedor">
+              <h3>{{project.title}}</h3>
+              <p>{{project.description}}</p>
+            </div>
+          </div>
         </div>    
     </div>
   </div>

@@ -1,10 +1,10 @@
-import { AboutComponent } from './../about/about.component';
-import { OurProjectsComponent } from './../our-projects/our-projects.component';
-import { OurServicesComponent } from './../our-services/our-services.component';
-import { IndexComponent } from './../index/index.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { IndexComponent } from "app/index/index.component";
+import { AboutComponent } from "app/about/about.component";
+import { OurServicesComponent } from "app/our-services/our-services.component";
+import { OurProjectsComponent } from "app/our-projects/our-projects.component";
 
 const routes: Routes = [
   { path: 'inicio', component: IndexComponent },

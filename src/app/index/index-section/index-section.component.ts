@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
-import { Button } from './../../classes/button';
 import { Component, OnInit, Input, Inject, HostListener } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import * as $ from 'jquery';
+import { Button } from "app/classes/button";
 
 @Component({
   selector: 'index-section',

@@ -1,6 +1,6 @@
-import { Button } from './../../classes/button';
-import { headerButtons } from '../../data/data';
 import { Injectable } from '@angular/core';
+import { Button } from "app/classes/button";
+import { headerButtons } from "app/data/data";
 
 @Injectable()
 export class ButtonsService {

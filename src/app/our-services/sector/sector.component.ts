@@ -1,6 +1,6 @@
-import { Sector } from './../../classes/sector';
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { SectorsService } from "app/services/sectors/sectors.service";
+import { Sector } from "app/classes/sector";
 
 @Component({
   selector: 'sector',
