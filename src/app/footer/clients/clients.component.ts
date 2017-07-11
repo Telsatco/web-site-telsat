@@ -21,7 +21,8 @@ export class ClientsComponent implements OnInit {
     this.clientsService.getClient().then(data => {
       this.clients = this.arrayToGroups(data, 3);
       this.clients = this.arrayToGroups(this.clients, 2);
-    });
+    })
+    .catch(() => alert("Error en la consulta"))
     
   }
 

@@ -56,11 +56,13 @@ export class SectorComponent implements OnInit {
   }
   
   getChildren(): void {
-    this.sectorsService.getSectors(this.sector.id).then(data => {
-      if (data.length>0){
-        this.children = data;
-      }
-    });
+    this.sectorsService.getSectors(this.sector.id)
+      .then(data => {
+        if (data.length>0){
+          this.children = data;
+        }
+      })
+      .catch(() => alert("Error en la consulta"))
   }
 
 }

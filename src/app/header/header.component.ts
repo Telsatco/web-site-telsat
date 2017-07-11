@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
   getButtons(): void {
     this.buttonsService.getButtons()
         .then(data => this.buttons = data )
+        .catch(() => alert("Error en la consulta"))
   }
 
 }

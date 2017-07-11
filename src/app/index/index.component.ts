@@ -19,7 +19,9 @@ export class IndexComponent implements OnInit {
   }
 
   getButtons(): void {
-    this.buttonsService.getButtons().then(data => this.buttons = data )
+    this.buttonsService.getButtons()
+    .then(data => this.buttons = data )
+    .catch(() => alert("Error en la consulta"))
   }
 
   ngAfterViewInit(){

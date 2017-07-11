@@ -42,12 +42,14 @@ export class OurServicesComponent implements OnInit {
     this.sectorsService.getSectors(parent)
       .then(data => {
         if (data.length > 0) this.sectors = data
-      });
+      })
+      .catch(() => alert("Error en consulta"))
   }
 
   getParent(parent: string):void {
     this.sectorsService.getParent(parent)
       .then(data => this.sectors = data )
+      .catch(() => alert("Error en la consulta"))
   }
 
   ngAfterViewInit(){
