@@ -10,7 +10,7 @@ import { Project } from "app/classes/project";
   providers: [ClientsService]
 })
 export class DivisionesComponent implements OnInit {
-  private techDivisions: Project[];
+  techDivisions: Project[];
 
   constructor( private ClientServices: ClientsService) { }
 

@@ -10,7 +10,7 @@ import { TelsatInfo } from "app/classes/telsat-info";
   providers: [FooterInfoService]
 })
 export class AboutUsComponent implements OnInit {
-  private companyInfo: TelsatInfo;
+  companyInfo: TelsatInfo;
   constructor(private infoFooter: FooterInfoService) { }
 
   ngOnInit() {

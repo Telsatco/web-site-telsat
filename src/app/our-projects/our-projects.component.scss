@@ -2,7 +2,7 @@ img{
   width: 100%;
 }
 
-div.container-fluid {
+.container-fluid {
   margin: 15px;
 }
 
@@ -62,10 +62,6 @@ div.container-fluid {
     h3, p{
       text-shadow: 0 0 20px black;
     }
-    
-    p{
-      font-size: 20px;
-    }
   }
 }
 
@@ -102,5 +98,41 @@ div.container-fluid {
       -webkit-transform: scale(.9);
       transform: scale(.9);
     }
+  }
+}
+
+
+@media screen and (max-width: 576px) {//extra small
+  h3 {
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 577px) {//small
+  h3 {
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 769px) {//Medium
+  h3 {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 993px) {//large
+  p{
+    font-size: 13px;
+  }
+  h3 {
+    font-size: 15px;
+  }
+} 
+
+@media screen and (min-width: 1200px) {//extra large
+  p{
+    font-size: 15px;
+  }
+  h3 {
+    font-size: 18px;
   }
 }

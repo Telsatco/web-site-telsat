@@ -13,11 +13,11 @@ import { ImageInfo } from "app/classes/imageInfo";
   providers: [ MisionVisionService, ImagesService ]
 })
 export class AboutComponent implements OnInit {
-  private mision: AboutUs;
-  private vision: AboutUs;
-  private values: AboutUs[];
-  private philos: ImageInfo;
-  private orgChart: ImageInfo;
+  mision: AboutUs;
+  vision: AboutUs;
+  values: AboutUs[];
+  philos: ImageInfo;
+  orgChart: ImageInfo;
 
   constructor(
       private location: Location,
