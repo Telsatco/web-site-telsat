@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="assets/TELSAT.png">
-    <img width=100% src="http://telsatcom.com/images/logopag-principal.png ">
+  <a href="https://telsatco.github.io/web-site-telsat">
+    <img width=100% src="assets/TELSAT.png">
   </a>
 </p>
 
