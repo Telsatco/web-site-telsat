@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://telsatco.github.io/web-site-telsat/inicio">
+  <a href="assets/telsat">
     <img width=100% src="http://telsatcom.com/images/logopag-principal.png ">
   </a>
 </p>
