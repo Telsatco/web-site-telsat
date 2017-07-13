@@ -1,11 +1,10 @@
+<p align="center">
+  <a href="https://telsatco.github.io/web-site-telsat/inicio">
+    <img width=100% src="http://telsatcom.com/images/logopag-principal.png ">
+  </a>
+</p>
+
+
 ## Telsat's web site 
 
 This project will be the new Telsat S.A.S web page
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
