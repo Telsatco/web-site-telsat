@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://telsatco.github.io/web-site-telsat">
-    <img width=100% src="assets/TELSAT.png">
+  <a href="https://telsatco.github.io/web-site-telsat/inicio">
+    Click me!!
   </a>
 </p>
 
