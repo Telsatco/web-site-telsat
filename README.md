@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="assets/telsat">
+  <a href="assets/TELSAT.png">
     <img width=100% src="http://telsatcom.com/images/logopag-principal.png ">
   </a>
 </p>
