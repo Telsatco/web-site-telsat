@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FrontEnd</title>
+  <base href="https://Telsatco.github.io/web-site-telsat/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" type="" href="assets/hover/css/set2.css">
+<link href="styles.11f1ee766a9cf574c978.bundle.css" rel="stylesheet"/></head>
+<body onload="loaded()" data-spy="scroll" data-target=".navbarNav-spy" data-offset="96">
+  <app-root id="content" style="display: none"></app-root>
+  <div id="load-container" style="display:none">
+    <div id="load">
+      <div>.</div>
+      <div>.</div>
+      <div>.</div>
+      <div>O</div>
+      <div>D</div>
+      <div>N</div>
+      <div>A</div>
+      <div>G</div>
+      <div>R</div>
+      <div>A</div>
+      <div>C</div>
+    </div>
+  </div>
+<script type="text/javascript" src="inline.404861ee276157833b7d.bundle.js"></script><script type="text/javascript" src="polyfills.60e21c05a2169b077954.bundle.js"></script><script type="text/javascript" src="scripts.0105b4dce16a3d11de3e.bundle.js"></script><script type="text/javascript" src="vendor.cc3dfb15ca049db1c646.bundle.js"></script><script type="text/javascript" src="main.fdaa8f1cdad3c791fe42.bundle.js"></script></body>
+<script>
+  AOS.init({
+      offset: 200,
+      duration: 600,
+      easing: 'ease-in-sine',
+      delay: 10,
+    });
+  document.getElementById('load-container').style.display = 'block';
+  function loaded() {
+    setTimeout(()=> {
+      document.getElementById('content').style.display = 'block';
+      document.getElementById('load-container').style.display = 'none';
+    },2000)
+  }
+</script>
+</html>
