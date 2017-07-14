@@ -40,8 +40,6 @@ export class SectorComponent implements OnInit {
       case '101':
         this.clase = "lightbulb-o";
       break;
-      default:
-      break;
     }
 
     this.getChildren()
@@ -50,9 +48,7 @@ export class SectorComponent implements OnInit {
   toggle(): void {
     if (this.children) {
       this.flip = !this.flip  
-    }else{
     }
-    
   }
   
   getChildren(): void {
@@ -62,7 +58,7 @@ export class SectorComponent implements OnInit {
           this.children = data;
         }
       })
-      .catch(() => alert("Error en la consulta"))
+      .catch(() => alert("Error de comunicación: code: #10"))
   }
 
 }

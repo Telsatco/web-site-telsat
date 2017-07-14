@@ -22,7 +22,7 @@ export class ProvidersComponent implements OnInit {
       this.providers = this.arrayToGroups(data, 3);
       this.providers = this.arrayToGroups(this.providers, 2);
     })
-    .catch(() => alert("Error en la consulta"))
+    .catch(() => alert("Error de comunicación, Code: #7"))
     
   }
 

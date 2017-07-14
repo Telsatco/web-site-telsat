@@ -1,13 +1,13 @@
 <div class="collapse navbar-collapse navbarNav-spy" id="navbarNav">
   <ul class="nav navbar-nav" role="tablist">
-    <li class="nav-item" *ngFor="let b of btn">
+    <li class="nav-item" *ngFor="let button of btn">
         <a class="nav-link border-top-0 border-left-0 border-right-0"
-           id="{{b.text}}"
-           [ngClass]="{'active': currentLocation === b.link}"
-           (click)="onWindowScroll(b.link)"
-           href="#{{b.link}}">
+           id="{{button.text}}"
+           [ngClass]="{'active': verifyActivate(button.link)}"
+           (click)="onWindowScroll(button.link)"
+           href="#{{button.link}}">
         <span class="row align-items-center">
-          {{b.text}}
+          {{button.text}}
         </span>
       </a>
     </li>

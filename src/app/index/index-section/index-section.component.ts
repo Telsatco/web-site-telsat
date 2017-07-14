@@ -13,7 +13,6 @@ export class IndexSectionComponent implements OnInit {
   @Input() section: Button;
   @Input('index') index: number;
   side: number;
-  currentLocation: string;
 
   constructor(@Inject(DOCUMENT) private document: Document, private router: Router) { }
   
@@ -33,10 +32,9 @@ export class IndexSectionComponent implements OnInit {
   }
   
   goTo(): void {
-    this.router.navigate([`/${this.section.link}`]);
-    this.currentLocation = window.location.pathname.slice(1)
-    $(".nav-link").removeClass("active");
-    document.getElementById(`${this.section.text}`).classList.add("active");
+    this.router.navigate([`/${this.section.link}`])
+    $(".nav-link").removeClass("active")
+    document.getElementById(`${this.section.text}`).classList.add("active")
     document.querySelector('html, body').scrollTop = 0;
   }
 

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 import { MisionVisionService } from "app/services/misionVision/mision-vision.service";
-import * as $ from 'jquery';
 import { AboutUs } from "app/classes/about-us";
 import { ImagesService } from "app/services/imagesServices/images.service";
 import { ImageInfo } from "app/classes/imageInfo";
@@ -20,7 +18,6 @@ export class AboutComponent implements OnInit {
   orgChart: ImageInfo;
 
   constructor(
-      private location: Location,
       private MisionVisionService: MisionVisionService,
       private ImagesServices: ImagesService
       ) { }
@@ -41,13 +38,13 @@ export class AboutComponent implements OnInit {
         this.mision = data[0]
         this.vision = data [1]
       })
-      .catch( () => alert("Error consultando mision y vision") )
+      .catch( () => alert("Error de comunicación, Code: #2") )
   }
 
   getValues(): void {
     this.MisionVisionService.getValues()
       .then( data => this.values = data)
-      .catch( () => alert("Error consultando valores") )
+      .catch( () => alert("Error de comunicación, Code: #3") )
   }
 
   getPhilosOrgImg(): void {
@@ -56,7 +53,7 @@ export class AboutComponent implements OnInit {
         this.philos = data[0]
         this.orgChart = data[1]
       })
-      .catch( () => alert("error cargando imagenes"))
+      .catch( () => alert("Error de comunicación, Code: #4"))
   }
 
 }

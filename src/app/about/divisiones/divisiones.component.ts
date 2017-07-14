@@ -21,7 +21,7 @@ export class DivisionesComponent implements OnInit {
   getTechDivisions(): void {
     this.ClientServices.getTechDivisions()
       .then(data => this.techDivisions = data)
-      .catch(() => alert("Error de consulta"))
+      .catch(() => alert("Error de comunicación, Code: #1"))
   }
 
 }

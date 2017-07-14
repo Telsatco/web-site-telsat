@@ -59,9 +59,9 @@ export const providers: Client[] = [
 
 export const projects: Project [] = [
   new Project({ img:"assets/projects/bass/1.jpg", title:"Centro de monitoreo (BASS)", desc: "Centro de monitoreo" }),
-  new Project({ img:"assets/projects/saludSuraBogota/1.jpg", title:"Salud SURA, Bogotá", desc: "" }),
-  new Project({ img:"assets/projects/industriales/1.jpg", title:"SURAMERICANA industriales", desc: "" }),
-  new Project({ img:"assets/projects/salvamentos/1.jpg", title:"Centro Nacional de Salvamentos, SURA", desc: "" }),
+  //new Project({ img:"assets/projects/saludSuraBogota/1.jpg", title:"Salud SURA, Bogotá", desc: "" }),
+  //new Project({ img:"assets/projects/industriales/1.jpg", title:"SURAMERICANA industriales", desc: "" }),
+  //new Project({ img:"assets/projects/salvamentos/1.jpg", title:"Centro Nacional de Salvamentos, SURA", desc: "" }),
   new Project({ img:"assets/projects/Tunel UPB/1.jpg", title:"Túnel de viento, UPB", desc: "Se encuentra en un laboratorio de la Universidad Pontifica Bolivariana, donde los estudiantes de ingenieria aeronautica lo utilizan para hacer  mediciones y distinguir el funcionamiento del as partes de las maquinas voladoras"}),
   new Project({ img:"assets/projects/flying cat/1.jpg", title:"Flying Cat", desc: "Diseño y fabricación de avión liviano"}),
   new Project({ img:"assets/projects/jaguar/1.jpg", title:"JAGUAR", desc: "Diseño y fabricación de avión de reconocimiento no tripulado"}),

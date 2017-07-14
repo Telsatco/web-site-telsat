@@ -6,11 +6,11 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" type="" href="assets\hover\css\set2.css">
+  <link rel="stylesheet" type="" href="assets/hover/css/set2.css">
 </head>
 <body onload="loaded()" data-spy="scroll" data-target=".navbarNav-spy" data-offset="96">
   <app-root id="content" style="display: none"></app-root>
-  <div id="load-container">
+  <div id="load-container" style="display:none">
     <div id="load">
       <div>.</div>
       <div>.</div>
@@ -33,7 +33,7 @@
       easing: 'ease-in-sine',
       delay: 10,
     });
-  
+  document.getElementById('load-container').style.display = 'block';
   function loaded() {
     setTimeout(()=> {
       document.getElementById('content').style.display = 'block';

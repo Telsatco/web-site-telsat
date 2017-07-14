@@ -2,9 +2,7 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner" role="listbox">
     <div class="row align-items-center carousel-item"
-         [ngClass]="{
-           'active': i === 0
-         }"
+         [ngClass]="{ 'active': i === 0 }"
          *ngFor="let group of clients; let i = index">
          <div class="row align-items-center text-center" *ngFor="let row of group">
             <a href="#" class="col-sm-4" *ngFor="let client of row">

@@ -1,7 +1,7 @@
 <div class="container-fluid">
-   <section class="row" *ngFor="let s of buttons; let i = index">
+   <section class="row" *ngFor="let aux of buttons; let i = index">
     <div class="col-sm-12">
-      <index-section [section]="s" [index]=i></index-section>
+      <index-section [section]="aux" [index]=i></index-section>
     </div>
  </section>
 </div>

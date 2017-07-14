@@ -9,7 +9,6 @@ export class ScrollLeftComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

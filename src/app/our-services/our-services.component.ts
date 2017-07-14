@@ -1,4 +1,3 @@
-import { DOCUMENT } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from "@angular/animations";
 import { SectorsService } from "app/services/sectors/sectors.service";
@@ -43,13 +42,13 @@ export class OurServicesComponent implements OnInit {
       .then(data => {
         if (data.length > 0) this.sectors = data
       })
-      .catch(() => alert("Error en consulta"))
+      .catch(() => alert("Error de comunicación, code: #12"))
   }
 
   getParent(parent: string):void {
     this.sectorsService.getParent(parent)
       .then(data => this.sectors = data )
-      .catch(() => alert("Error en la consulta"))
+      .catch(() => alert("Error de comunicación, code: #11"))
   }
 
   ngAfterViewInit(){

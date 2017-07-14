@@ -1,8 +1,5 @@
 import { Router } from '@angular/router';
-import { inject } from '@angular/core/testing';
-import { Component, OnInit, Input, Inject, HostListener } from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
-import * as $ from 'jquery';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { Button } from "app/classes/button";
 
 @Component({
@@ -13,29 +10,25 @@ import { Button } from "app/classes/button";
 export class ButtonHeaderComponent implements OnInit {
 
   @Input('buttons') btn: Button[];
-  currentLocation: string;
 
-  constructor(
-    @Inject(DOCUMENT) private document: Document, 
-    private router: Router) { }
+  constructor( private router: Router ) {  }
 
-  ngOnInit() {
-    this.currentLocation = window.location.pathname.slice(1)
-  }   
+  ngOnInit() { }   
   
   @HostListener('click', ['$event']) onClick(e) {
-    e.preventDefault();
-    this.currentLocation = window.location.pathname.slice(1)
-    $(".nav-link").removeClass("active");
-    this.btn.forEach((el) => {
-      if (el.link === this.currentLocation) {
-        document.getElementById(`${el.text}`).classList.add("active");
-      }
-    })
+    e.preventDefault()
   }
 
   onWindowScroll(link: string) {
-    this.router.navigate([`/${link}`]);
     document.querySelector("html, body").scrollTop = 0
+    this.router.navigate([`/${link}`])
+  }
+
+  verifyActivate(link: string): boolean {
+    let location = window.location.pathname
+    if (location.search(link) === -1)
+      return false
+    else
+      return true
   }
 }
