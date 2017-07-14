@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from "@angular/animations";
 import { SectorsService } from "app/services/sectors/sectors.service";
 import { Sector } from "app/classes/sector";
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-our-services',
@@ -27,6 +28,7 @@ import { Sector } from "app/classes/sector";
   ]
 })
 
+
 export class OurServicesComponent implements OnInit {
   sectors: Sector[];
   state: string = 'visible';
@@ -38,6 +40,7 @@ export class OurServicesComponent implements OnInit {
   }
 
   getSectors(parent: string): void {
+    $('html, body').scrollTop(0)
     this.sectorsService.getSectors(parent)
       .then(data => {
         if (data.length > 0) this.sectors = data
@@ -46,6 +49,7 @@ export class OurServicesComponent implements OnInit {
   }
 
   getParent(parent: string):void {
+    $('html, body').scrollTop(0)
     this.sectorsService.getParent(parent)
       .then(data => this.sectors = data )
       .catch(() => alert("Error de comunicación, code: #11"))

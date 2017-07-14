@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { Button } from "app/classes/button";
+import * as $ from 'jquery';
 
 @Component({
   selector: 'button-header',
@@ -17,10 +18,18 @@ export class ButtonHeaderComponent implements OnInit {
   
   @HostListener('click', ['$event']) onClick(e) {
     e.preventDefault()
+    $(".nav-link").removeClass("active")
+    let location = window.location.pathname
+    this.btn.forEach((el) => {		
+      if (location.search(el.link) !== -1) {		
+        document.getElementById(`${el.text}`).classList.add("active")		
+      }		
+    })
   }
+  
 
   onWindowScroll(link: string) {
-    document.querySelector("html, body").scrollTop = 0
+    $("html, body").scrollTop(0)
     this.router.navigate([`/${link}`])
   }
 

@@ -22,10 +22,10 @@ export class OurProjectsComponent implements OnInit {
   }
 
   getProjects(): void {
-    this.clientsService
-      .getProjects()
+    this.clientsService.getProjects()
       .then((data) => this.projects = data)
-      .catch(() => alert("El servidor no responde"))
+      .catch(() => alert("Error de comunicación, code: #13"))
   }
+    
 
 }

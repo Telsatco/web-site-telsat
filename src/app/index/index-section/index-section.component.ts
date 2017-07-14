@@ -1,6 +1,5 @@
 import { Router } from '@angular/router';
 import { Component, OnInit, Input, Inject, HostListener } from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
 import * as $ from 'jquery';
 import { Button } from "app/classes/button";
 
@@ -14,7 +13,8 @@ export class IndexSectionComponent implements OnInit {
   @Input('index') index: number;
   side: number;
 
-  constructor(@Inject(DOCUMENT) private document: Document, private router: Router) { }
+  constructor(private router: Router) { }
+  
   
   ngOnInit() {
     switch (this.index) {
@@ -35,17 +35,15 @@ export class IndexSectionComponent implements OnInit {
     this.router.navigate([`/${this.section.link}`])
     $(".nav-link").removeClass("active")
     document.getElementById(`${this.section.text}`).classList.add("active")
-    document.querySelector('html, body').scrollTop = 0;
+    $('html, body').scrollTop(0)
   }
 
   @HostListener('click', ['$event']) onClick(e) {
-    e.preventDefault();
+    e.preventDefault()
   }
 
   onWindowScroll() {   
-    $('html, body').animate({
-      scrollTop: $('#nosotros').offset().top -95
-    }, 'slow')
+    $('html, body').animate({ scrollTop: $('#nosotros').offset().top -95 }, 'slow')
   }
 
 }
