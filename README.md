@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://telsatco.github.io/web-site-telsat/inicio">
+  <a href="https://telsatco.github.io/web-site-telsat/">
     Click me!!
   </a>
 </p>
