@@ -14,7 +14,10 @@ export class IndexSectionComponent implements OnInit {
   side: number;
 
   constructor(private router: Router) { }
+<<<<<<< HEAD
   
+=======
+>>>>>>> 6a1112c1fecc75d24e3785027bace72c8160c263
   
   ngOnInit() {
     switch (this.index) {
