@@ -48,13 +48,14 @@ export const clients: Client[] = [
 ]
 
 export const providers: Client[] = [
+  new Client ({ company: "T.I RESCUE", link: "./assets/providers/tirescue.png", size: {x: "100", y: "100"} }),
   new Client ({ company: "DEISTER", link: "./assets/providers/deister.png", size: {x: "120", y: "50"} }),
   new Client ({ company: "HONEYWELL", link: "./assets/providers/honeywell.png", size: {x: "90", y: "100"} }),
   new Client ({ company: "TCC", link: "./assets/providers/tcc.png", size: {x: "150", y: "50"} }),
   new Client ({ company: "VELCO", link: "./assets/providers/velco.png", size: {x: "100", y: "100"} }),
   new Client ({ company: "VICON", link: "./assets/providers/vicon.png", size: {x: "200", y: "100"} }),
   new Client ({ company: "WOLPAC", link: "./assets/providers/wolpac.png", size: {x: "100", y: "100"} }),
-  new Client ({ company: "HID", link: "./assets/providers/hid.png", size: {x: "100", y: "100"} }),
+  new Client ({ company: "HID", link: "./assets/providers/hid.png", size: {x: "100", y: "100"} })
 ]
 
 export const projects: Project [] = [

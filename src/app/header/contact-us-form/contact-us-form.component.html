@@ -10,27 +10,29 @@
       </div>
       <div class="modal-body">
         
-        <form>
+        <form role="form" data-toggle="validator" method="post" action="email">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Nombre" required>
+            <input type="text" name="name" class="form-control" placeholder="Nombre" required>
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Apellidos" required>
+            <input type="text" name="lastName" class="form-control" placeholder="Apellidos" required>
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Empresa (opcional)">
+            <input type="text" name="company" class="form-control" placeholder="Empresa (opcional)">
           </div>
 
           <div class="form-group">
-            <input type="email" class="form-control" placeholder="Correo electrónico" required>
+            <input type="email" name="email"  class="form-control" placeholder="Correo electrónico" required>
           </div>
 
           <div class="form-group">
-            <textarea class="form-control" id="Mensaje" placeholder="Mensaje" rows="5" required></textarea >
+            <textarea class="form-control" name="message" id="Mensaje" placeholder="Mensaje" rows="5" required></textarea >
           </div>
-          <button type="submit" class="btn btn-raised btn-primary" data-dismiss="modal">Enviar</button>
+          <div class="form-group">
+            <button type="submit" class="btn btn-raised btn-primary">Enviar</button>
+          </div>
         </form>
       </div>
     </div>
