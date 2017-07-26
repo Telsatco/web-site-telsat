@@ -1,6 +1,7 @@
 import { RoutingModule } from './routing/routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule }    from '@angular/http';
 
 import { AppComponent } from './mainApp/app.component';
 import { HeaderComponent } from './header/header.component';
@@ -48,7 +49,8 @@ import { SectorComponent } from './our-services/sector/sector.component';
   imports: [
     BrowserModule,
     RoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

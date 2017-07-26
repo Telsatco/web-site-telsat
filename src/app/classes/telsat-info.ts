@@ -42,9 +42,9 @@ export class TelsatInfo {
       this._copyRight = copyRight
   }
 
-  get addresTitle() { return this._address.title }
-  get addresLocal() { return this._address.local }
-  get addresCity() { return this._address.city }
+  get addressTitle() { return this._address.title }
+  get addressLocal() { return this._address.local }
+  get addressCity() { return this._address.city }
 
   get contactTitle() { return this._contact.title }
   get contactPhoneTitle() { return this._contact.phone.title }

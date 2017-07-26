@@ -19,8 +19,7 @@ export class AboutUsComponent implements OnInit {
 
   getInfo(): void {
     this.infoFooter.getCompanyInfo()
-      .then(data => this.companyInfo = data)
-      .catch(() => alert("Error de comunicación, Code: #5"))
+        .subscribe(data => this.companyInfo = data )
   }
 
 }
