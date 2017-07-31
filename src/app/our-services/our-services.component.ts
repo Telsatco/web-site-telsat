@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from "@angular/animations";
-import { SectorsService } from "app/services/sectors/sectors.service";
+import { ServicesTelsat } from 'app/services/Telsat/Telsat.service';
 import { Sector } from "app/classes/sector";
 import * as $ from 'jquery';
 
@@ -8,7 +8,7 @@ import * as $ from 'jquery';
   selector: 'app-our-services',
   templateUrl: './our-services.component.html',
   styleUrls: ['./our-services.component.scss'],
-  providers: [SectorsService],
+  providers: [ServicesTelsat],
   animations: [
     trigger('flyInOut', [
       state('in', style({opacity: 1, transform: 'translateX(0)'})),
@@ -33,26 +33,26 @@ export class OurServicesComponent implements OnInit {
   sectors: Sector[];
   state: string = 'visible';
 
-  constructor(private sectorsService: SectorsService) { }
+  constructor( private sectorService: ServicesTelsat ) { }
 
   ngOnInit() {
-    this.getSectors("");
+    this.getInfoSectors("");
   }
 
-  getSectors(parent: string): void {
+  getInfoSectors(parent: string): void {
     $('html, body').scrollTop(0)
-    this.sectorsService.getSectors(parent)
-      .then(data => {
-        if (data.length > 0) this.sectors = data
-      })
-      .catch(() => alert("Error de comunicación, code: #12"))
+    this.sectorService.getSectors(parent)
+        .subscribe(data => {
+          if (data.length > 0) {
+            this.sectors = data
+          }
+        })
   }
 
-  getParent(parent: string):void {
+  getInfoParent(parent: string):void {
     $('html, body').scrollTop(0)
-    this.sectorsService.getParent(parent)
-      .then(data => this.sectors = data )
-      .catch(() => alert("Error de comunicación, code: #11"))
+    this.sectorService.getParent(parent)
+        .subscribe(data => this.sectors = data)
   }
 
   ngAfterViewInit(){

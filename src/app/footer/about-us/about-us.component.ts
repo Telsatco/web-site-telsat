@@ -1,17 +1,16 @@
-import { providers } from 'app/data/data';
 import { Component, OnInit } from '@angular/core';
-import { FooterInfoService } from "app/services/footerInfo/footer-info.service";
+import { ServicesTelsat } from 'app/services/Telsat/Telsat.service';
 import { TelsatInfo } from "app/classes/telsat-info";
 
-@Component({
+@Component({ 
   selector: 'about-us',
   templateUrl: './about-us.component.html',
   styleUrls: ['./about-us.component.scss'],
-  providers: [FooterInfoService]
+  providers: [ServicesTelsat]
 })
 export class AboutUsComponent implements OnInit {
   companyInfo: TelsatInfo;
-  constructor(private infoFooter: FooterInfoService) { }
+  constructor(private infoFooter: ServicesTelsat) { }
 
   ngOnInit() {
     this.getInfo()

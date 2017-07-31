@@ -1,11 +1,12 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { SectorsService } from "app/services/sectors/sectors.service";
+import { ServicesTelsat } from 'app/services/Telsat/Telsat.service';
 import { Sector } from "app/classes/sector";
 
 @Component({
   selector: 'sector',
   templateUrl: './sector.component.html',
   styleUrls: ['./sector.component.scss'],
+  providers: [ ServicesTelsat ]
 })
 export class SectorComponent implements OnInit {
   @Input('section')sector:any;
@@ -18,7 +19,7 @@ export class SectorComponent implements OnInit {
     this.clickId.emit(this.sector.id)
   }
 
-  constructor(private sectorsService: SectorsService) { }
+  constructor(private sectorsService: ServicesTelsat) { }
 
   ngOnInit() {
     switch (this.sector.id) {
@@ -53,12 +54,11 @@ export class SectorComponent implements OnInit {
   
   getChildren(): void {
     this.sectorsService.getSectors(this.sector.id)
-      .then(data => {
-        if (data.length>0){
-          this.children = data;
-        }
-      })
-      .catch(() => alert("Error de comunicación: code: #10"))
+        .subscribe(data => {
+          if (data.length>0){
+            this.children = data;
+          }
+        })
   }
 
 }

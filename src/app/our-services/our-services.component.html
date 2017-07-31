@@ -1,13 +1,13 @@
 <div class="container-fluid">
   <div id="container-row" class="row justify-content-center align-items-center" *ngIf="sectors" [class.fvh]="sectors[0].parent === ''">
     <div class="col-1 hidden-xs-down" *ngIf="sectors[0].parent">
-      <a (click)="getParent(sectors[0].parent)" >
+      <a (click)="getInfoParent(sectors[0].parent)" >
         <scroll-left></scroll-left>
       </a>
     </div>
     <div class="col-12 col-sm-11">
       <div class="row hidden-sm-up" *ngIf="sectors[0].parent">
-        <a (click)="getParent(sectors[0].parent)" >
+        <a (click)="getInfoParent(sectors[0].parent)" >
           <scroll-left></scroll-left>
         </a>
       </div>
@@ -15,7 +15,7 @@
         <sector *ngFor="let sector of sectors, let i = index"
                 [section]="sector"
                 class="col-12 col-sm-6 col-lg-4 text-center"
-                (clickId)="getSectors($event)"
+                (clickId)="getInfoSectors($event)"
                 [@flyInOut]="'in'">
                 </sector>
       </div>

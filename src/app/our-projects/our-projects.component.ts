@@ -1,30 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { ClientsService } from "app/services/clients/clients.service";
 import { Project } from "app/classes/project";
+import { ServicesTelsat } from 'app/services/Telsat/Telsat.service';
 
 @Component({
   selector: 'app-our-projects',
   templateUrl: './our-projects.component.html',
   styleUrls: ['./our-projects.component.scss'],
-  providers: [ClientsService]
+  providers: [ServicesTelsat]
 })
 export class OurProjectsComponent implements OnInit {
   projects: Project[];
 
-  constructor(private clientsService: ClientsService) { }
+  constructor(private infoProjects: ServicesTelsat) { }
 
   ngOnInit() {
-    this.getProjects();
+    this.getDataProjects();
   }
 
   ngAfterViewInit(){
     document.getElementById("navbarNav").classList.remove("navbarNav-spy");
   }
 
-  getProjects(): void {
-    this.clientsService.getProjects()
-      .then((data) => this.projects = data)
-      .catch(() => alert("Error de comunicación, code: #13"))
+  getDataProjects(): void {
+    this.infoProjects.getProjects()
+        .subscribe(data => this.projects = data)
   }
     
 

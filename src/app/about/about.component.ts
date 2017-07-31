@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { MisionVisionService } from "app/services/misionVision/mision-vision.service";
 import { AboutUs } from "app/classes/about-us";
-import { ImagesService } from "app/services/imagesServices/images.service";
 import { ImageInfo } from "app/classes/imageInfo";
+
+import { ServicesTelsat } from 'app/services/Telsat/Telsat.service';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
-  providers: [ MisionVisionService, ImagesService ]
+  providers: [ ServicesTelsat ]
 })
 export class AboutComponent implements OnInit {
   mision: AboutUs;
@@ -17,43 +17,25 @@ export class AboutComponent implements OnInit {
   philos: ImageInfo;
   orgChart: ImageInfo;
 
-  constructor(
-      private MisionVisionService: MisionVisionService,
-      private ImagesServices: ImagesService
-      ) { }
+  constructor( private aboutUsServices: ServicesTelsat ) { }
 
   ngOnInit() {
-    this.getMisionAndVision()
-    this.getValues()
-    this.getPhilosOrgImg()
+    this.getInfoAboutUs()
   }
 
   ngAfterViewInit(){
     document.getElementById("navbarNav").classList.remove("navbarNav-spy");
   }
 
-  getMisionAndVision(): void {
-    this.MisionVisionService.getMisionVision()
-      .then( data => {        
-        this.mision = data[0]
-        this.vision = data [1]
-      })
-      .catch( () => alert("Error de comunicación, Code: #2") )
-  }
 
-  getValues(): void {
-    this.MisionVisionService.getValues()
-      .then( data => this.values = data)
-      .catch( () => alert("Error de comunicación, Code: #3") )
+  private getInfoAboutUs(): void {
+    this.aboutUsServices.getAboutUs()
+        .subscribe(({mision, vision, philos, orgChart, values}) => {
+          this.mision = mision
+          this.vision = vision
+          this.values = values
+          this.philos = philos
+          this.orgChart = orgChart
+        })
   }
-
-  getPhilosOrgImg(): void {
-    this.ImagesServices.getPhilosOrg()
-      .then( data => {
-        this.philos = data[0]
-        this.orgChart = data[1]
-      })
-      .catch( () => alert("Error de comunicación, Code: #4"))
-  }
-
 }
