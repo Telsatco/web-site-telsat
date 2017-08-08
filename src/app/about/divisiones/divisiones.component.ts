@@ -8,18 +8,20 @@ import { Project } from "app/classes/project";
   styleUrls: ['./divisiones.component.scss'],
   providers: [ServicesTelsat]
 })
-export class DivisionesComponent implements OnInit {
+export class DivisionesComponent {
   techDivisions: Project[];
+  subscription : any;
 
-  constructor( private ClientServices: ServicesTelsat) { }
-
-  ngOnInit() {
+  constructor( private ClientServices: ServicesTelsat) {
     this.getInfoTechDivisions()
-  }
+   }
 
   getInfoTechDivisions(): void {
-    this.ClientServices.getTechDivisions()
+    this.subscription = this.ClientServices.getTechDivisions()
         .subscribe(data => this.techDivisions = data)
   }
 
+  ngOnDestroy() {
+    if (this.subscription)  this.subscription.unsubscribe()
+  }
 }

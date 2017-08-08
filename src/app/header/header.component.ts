@@ -8,18 +8,21 @@ import { ServicesTelsat } from 'app/services/Telsat/Telsat.service';
   styleUrls: ['./header.component.scss'],
   providers: [ServicesTelsat]
 })
-export class HeaderComponent implements OnInit {
-
+export class HeaderComponent {
+  subscription: any;
   buttons: Button[];
 
-  constructor(private buttonsInfo: ServicesTelsat) { }
+  constructor(private buttonsInfo: ServicesTelsat) {
+    this.getInfoHeaderButtons()
+   }
 
-  ngOnInit() {
-    this.getButtons();
-  }
-
-  getButtons(): void {
-    this.buttonsInfo.getButtons()
+  getInfoHeaderButtons(): void {
+    this.subscription = this.buttonsInfo.getButtons()
         .subscribe(data => this.buttons = data)
   }
+
+  ngOnDestroy() {
+    if (this.subscription)  this.subscription.unsubscribe()
+  }
+
 }

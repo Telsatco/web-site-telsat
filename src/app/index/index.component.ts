@@ -8,19 +8,21 @@ import { ServicesTelsat } from 'app/services/Telsat/Telsat.service';
   styleUrls: ['./index.component.scss'],
   providers: [ServicesTelsat]
 })
-export class IndexComponent implements OnInit {
-
+export class IndexComponent {
+  subscription: any;
   buttons: Button[];
 
-  constructor(private buttonsInfo: ServicesTelsat) { }
+  constructor(private buttonsInfo: ServicesTelsat) {
+    this.getInfoIndexButtons()
+   }
 
-  ngOnInit() {
-    this.getButtons();
-  }
-
-  getButtons(): void {
-    this.buttonsInfo.getButtons()
+  getInfoIndexButtons(): void {
+    this.subscription = this.buttonsInfo.getButtons()
         .subscribe(data => this.buttons = data)
+  }
+      
+  ngOnDestroy() {
+    if (this.subscription)  this.subscription.unsubscribe()
   }
 
   ngAfterViewInit(){

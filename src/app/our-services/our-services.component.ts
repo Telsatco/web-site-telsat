@@ -29,19 +29,19 @@ import * as $ from 'jquery';
 })
 
 
-export class OurServicesComponent implements OnInit {
+export class OurServicesComponent {
   sectors: Sector[];
   state: string = 'visible';
+  subscriptionSectors: any;
+  subscriptionParent: any;
 
-  constructor( private sectorService: ServicesTelsat ) { }
-
-  ngOnInit() {
-    this.getInfoSectors("");
+  constructor( private sectorService: ServicesTelsat ) { 
+    this.getInfoSectors("")
   }
 
   getInfoSectors(parent: string): void {
     $('html, body').scrollTop(0)
-    this.sectorService.getSectors(parent)
+    this.subscriptionSectors = this.sectorService.getSectors(parent)
         .subscribe(data => {
           if (data.length > 0) {
             this.sectors = data
@@ -51,11 +51,16 @@ export class OurServicesComponent implements OnInit {
 
   getInfoParent(parent: string):void {
     $('html, body').scrollTop(0)
-    this.sectorService.getParent(parent)
+    this.subscriptionParent = this.sectorService.getParent(parent)
         .subscribe(data => this.sectors = data)
   }
 
   ngAfterViewInit(){
     document.getElementById("navbarNav").classList.remove("navbarNav-spy");
+  }
+
+  ngOnDestroy() {
+    if (this.subscriptionSectors)  this.subscriptionSectors.unsubscribe()
+    if (this.subscriptionParent)  this.subscriptionParent.unsubscribe()
   }
 }

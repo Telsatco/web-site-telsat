@@ -10,18 +10,17 @@ import { ServicesTelsat } from 'app/services/Telsat/Telsat.service';
   styleUrls: ['./about.component.scss'],
   providers: [ ServicesTelsat ]
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
   mision: AboutUs;
   vision: AboutUs;
   values: AboutUs[];
   philos: ImageInfo;
   orgChart: ImageInfo;
+  subscription: any;
 
-  constructor( private aboutUsServices: ServicesTelsat ) { }
-
-  ngOnInit() {
+  constructor( private aboutUsServices: ServicesTelsat ) {
     this.getInfoAboutUs()
-  }
+   }
 
   ngAfterViewInit(){
     document.getElementById("navbarNav").classList.remove("navbarNav-spy");
@@ -29,7 +28,7 @@ export class AboutComponent implements OnInit {
 
 
   private getInfoAboutUs(): void {
-    this.aboutUsServices.getAboutUs()
+    this.subscription = this.aboutUsServices.getAboutUs()
         .subscribe(({mision, vision, philos, orgChart, values}) => {
           this.mision = mision
           this.vision = vision
@@ -37,5 +36,9 @@ export class AboutComponent implements OnInit {
           this.philos = philos
           this.orgChart = orgChart
         })
+  }
+
+  ngOnDestroy() {
+    if (this.subscription)  this.subscription.unsubscribe()
   }
 }

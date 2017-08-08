@@ -14,6 +14,7 @@ export class SectorComponent implements OnInit {
   clase: string;
   flip: boolean = false;
   children: Sector[];
+  subscription: any;
 
   send(): void {
     this.clickId.emit(this.sector.id)
@@ -53,12 +54,16 @@ export class SectorComponent implements OnInit {
   }
   
   getChildren(): void {
-    this.sectorsService.getSectors(this.sector.id)
+    this.subscription = this.sectorsService.getSectors(this.sector.id)
         .subscribe(data => {
           if (data.length>0){
             this.children = data;
           }
         })
+  }
+
+  ngOnDestroy() {
+    if (this.subscription)  this.subscription.unsubscribe()
   }
 
 }

@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
 import { ServicesTelsat } from 'app/services/Telsat/Telsat.service';
 import { TelsatInfo } from "app/classes/telsat-info";
@@ -8,17 +9,21 @@ import { TelsatInfo } from "app/classes/telsat-info";
   styleUrls: ['./about-us.component.scss'],
   providers: [ServicesTelsat]
 })
-export class AboutUsComponent implements OnInit {
+export class AboutUsComponent {
   companyInfo: TelsatInfo;
-  constructor(private infoFooter: ServicesTelsat) { }
-
-  ngOnInit() {
+  subscription: any;
+  constructor(private infoFooter: ServicesTelsat) { 
     this.getInfo()
   }
 
-  getInfo(): void {
-    this.infoFooter.getCompanyInfo()
+
+  getInfo() {
+    this.subscription = this.infoFooter.getCompanyInfo()
         .subscribe(data => this.companyInfo = data )
+  }
+
+  ngOnDestroy() {
+    if (this.subscription)  this.subscription.unsubscribe()
   }
 
 }

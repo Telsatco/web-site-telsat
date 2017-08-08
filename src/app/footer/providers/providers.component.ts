@@ -8,21 +8,23 @@ import { Client } from "app/classes/client";
   styleUrls: ['./providers.component.scss'],
   providers: [ServicesTelsat]
 })
-export class ProvidersComponent implements OnInit {
+export class ProvidersComponent {
   providers: Client[];
-
-  constructor(private providersService:ServicesTelsat) { }
-
-  ngOnInit() {
-    this.getInfoProviders();
+  subscription: any
+  constructor(private providersService:ServicesTelsat) { 
+    this.getInfoProviders()
   }
 
   private getInfoProviders(): void {
-    this.providersService.getProvider()
+    this.subscription = this.providersService.getProvider()
         .subscribe( data => {
          let providersGroup = this.arrayToGroups(data, 3);
           this.providers = this.arrayToGroups(providersGroup, 2);
         })
+  }
+
+  ngOnDestroy() {
+    if (this.subscription)  this.subscription.unsubscribe()
   }
 
   private arrayToGroups(source, groupSize): Array<any>{

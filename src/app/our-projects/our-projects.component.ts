@@ -8,23 +8,25 @@ import { ServicesTelsat } from 'app/services/Telsat/Telsat.service';
   styleUrls: ['./our-projects.component.scss'],
   providers: [ServicesTelsat]
 })
-export class OurProjectsComponent implements OnInit {
+export class OurProjectsComponent {
   projects: Project[];
-
-  constructor(private infoProjects: ServicesTelsat) { }
-
-  ngOnInit() {
-    this.getDataProjects();
+  subscription: any;
+  constructor(private infoProjects: ServicesTelsat) { 
+    this.getDataProjects()
   }
+
 
   ngAfterViewInit(){
     document.getElementById("navbarNav").classList.remove("navbarNav-spy");
   }
 
   getDataProjects(): void {
-    this.infoProjects.getProjects()
+    this.subscription = this.infoProjects.getProjects()
         .subscribe(data => this.projects = data)
   }
     
+  ngOnDestroy() {
+    if (this.subscription)  this.subscription.unsubscribe()
+  }
 
 }
